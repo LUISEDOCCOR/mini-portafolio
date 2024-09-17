@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/dm-sans';
+import { ViewTransitions } from 'astro:transitions';
 import Og from '../components/Og.astro';
 ---
 
@@ -11,9 +12,10 @@ import Og from '../components/Og.astro';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions/>
 		<Og/>
 	</head>
-	<body>
+	<body class="mx-auto max-w-3xl pb-6 pt-16 space-y-12">
 		<slot />
 	</body>
 </html>

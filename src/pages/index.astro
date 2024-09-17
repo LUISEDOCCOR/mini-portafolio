@@ -12,87 +12,102 @@ import Linkedin from '../components/Icons/Linkedin.astro';
 import Mail from '../components/Icons/Mail.astro';
 //data
 import { education, skills, certificates, proyects  } from "../data/data"
+//blog
+const posts = await Astro.glob("../pages/blog/*.md")
 ---
 
 <Layout>
-    <div class="mx-auto max-w-3xl pb-6 pt-16 space-y-12">
-        <header class="flex">
-            <section class="w-2/3 space-y-2">
-                <h1 class="text-2xl font-bold">Luis Eduardo</h1>
-                <p class="jetbrains-mono text-md text-neutral-600">+2 año de experiencia. Desarrollador Front-end y Back-End. Programador autodidacta.</p>
-                <h2 class="flex items-center gap-2 jetbrains-mono text-sm text-neutral-600">
-                    <Location/>
-                    Jalisco, México
-                </h2>
-                <article class="flex items-center gap-2">
-                    <Link href="https://github.com/LUISEDOCCOR" desc="Luis Eduardo GitHub">
-                        <Github/>
-                    </Link>
-                    <Link href="https://mx.linkedin.com/in/luiseduardoocegueda" desc="Luis Eduardo Linkedin">
-                        <Linkedin/>
-                    </Link>
-                    <Link href="mailto:luiseduardoocegueda@gmail.com" desc="Luis Eduardo mail">
-                        <Mail/>
-                    </Link>
-                </article>
-            </section>
-            <section class="w-1/3 flex justify-center">
-                <img
-                    class="w-32 h-32 object-cover object-center rounded-md"
-                    src="/profile.jpeg"
-                    alt="Profile image of Luis Eduardo Ocegueda Cortes"
-                >
-            </section>
-        </header>
-        <main class="space-y-12">
-            <Section title='Sobre mí'>
-                <p class="jetbrains-mono text-sm text-md text-neutral-600 leading-snug">
-                    Programador autodidacta con más de 2 años de experiencia en el
-                    mundo del desarrollo web, me apasiona aprender cosas nuevas, algo que
-                    me caracteriza es la responsabilidad que tomo en todos los proyectos
-                    que realizo, no solo de escribir código, si no de también tener una visión
-                    crítica del producto, las funcionalidades y el negocio.
-                </p>
-            </Section>
-            <Section title='Educación'>
-                <div class="space-y-2">
-                    {
-                      education.map((props) => (
-                      <Education {...props}/>
-                      ))
-                    }
-                </div>
-            </Section>
-            <Section title='Skills'>
-               <div class="flex justify-start gap-2">
+    <header class="flex">
+        <section class="w-2/3 space-y-2">
+            <h1 class="text-2xl font-bold">Luis Eduardo</h1>
+            <p class="jetbrains-mono text-md text-neutral-600">+2 año de experiencia. Desarrollador Front-end y Back-End. Programador autodidacta.</p>
+            <h2 class="flex items-center gap-2 jetbrains-mono text-sm text-neutral-600">
+                <Location/>
+                Jalisco, México
+            </h2>
+            <article class="flex items-center gap-2">
+                <Link href="https://github.com/LUISEDOCCOR" desc="Luis Eduardo GitHub">
+                    <Github/>
+                </Link>
+                <Link href="https://mx.linkedin.com/in/luiseduardoocegueda" desc="Luis Eduardo Linkedin">
+                    <Linkedin/>
+                </Link>
+                <Link href="mailto:luiseduardoocegueda@gmail.com" desc="Luis Eduardo mail">
+                    <Mail/>
+                </Link>
+            </article>
+        </section>
+        <section class="w-1/3 flex justify-center">
+            <img
+                class="w-32 h-32 object-cover object-center rounded-md"
+                src="/profile.jpeg"
+                alt="Profile image of Luis Eduardo Ocegueda Cortes"
+            >
+        </section>
+    </header>
+    <main class="space-y-12">
+        <Section title='Sobre mí'>
+            <p class="jetbrains-mono text-sm text-md text-neutral-600 leading-snug">
+                Programador autodidacta con más de 2 años de experiencia en el
+                mundo del desarrollo web, me apasiona aprender cosas nuevas, algo que
+                me caracteriza es la responsabilidad que tomo en todos los proyectos
+                que realizo, no solo de escribir código, si no de también tener una visión
+                crítica del producto, las funcionalidades y el negocio.
+            </p>
+        </Section>
+        <Section title='Educación'>
+            <div class="space-y-2">
                 {
-                  skills.map((skill) => (
-                    <Badge label={skill}/>
-                  ))
-                 }
-               </div>
-            </Section>
-            <Section title='Certificaciones'>
-               <div class="grid grid-cols-3 gap-4">
+                    education.map((props) => (
+                    <Education {...props}/>
+                    ))
+                }
+            </div>
+        </Section>
+        <Section title='Skills'>
+            <div class="flex justify-start gap-2">
+            {
+                skills.map((skill) => (
+                <Badge label={skill}/>
+                ))
+                }
+            </div>
+        </Section>
+        <Section title='Certificaciones'>
+            <div class="grid grid-cols-3 gap-4">
+            {
+                certificates.map((props) => (
+                <Card {...props}/>
+                ))
+                }
+            </div>
+        </Section>
+        <Section title='Proyectos'>
+            <div class="grid grid-cols-3 gap-4">
+            {
+                proyects.map((props) => (
+                <Card {...props}/>
+                ))
+                }
+            </div>
+        </Section>
+        <Section title='Blog'>
+            <div class="grid grid-cols-3 gap-4">
                 {
-                  certificates.map((props) => (
-                    <Card {...props}/>
+                  posts.map((post) => (
+                  <Card
+                    title={post.frontmatter.title}
+                    content={post.frontmatter.desc}
+                    href={post.url || ""}
+                    skills={[post.frontmatter.date]}
+                />
                   ))
-                 }
-               </div>
-            </Section>
-            <Section title='Proyectos'>
-               <div class="grid grid-cols-3 gap-4">
-                {
-                  proyects.map((props) => (
-                    <Card {...props}/>
-                  ))
-                 }
-               </div>
-            </Section>
-        </main>
-        <footer class="text-center font-semibold">
-            <span>Inspirado en <a class="underline" href="https://cv.jarocki.me">Bartosz Jarocki</a></span>
-        </footer>
-    </div>
+
+                  }
+            </div>
+        </Section>
+    </main>
+    <footer class="text-center font-semibold">
+        <span>Inspirado en <a class="underline" href="https://cv.jarocki.me">Bartosz Jarocki</a></span>
+    </footer>
 </Layout>
