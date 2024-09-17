@@ -12,4 +12,9 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: { enabled: true },
   }),
+  markdown: {
+    shikiConfig: {
+      theme: "one-dark-pro",
+    },
+  },
 });
