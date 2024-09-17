@@ -1,0 +1,33 @@
+---
+interface Props {
+    title: string
+    href: string
+    content: string
+    isWorking?: boolean
+    skills?: string[]
+}
+const { title, href, content, isWorking, skills } = Astro.props
+---
+
+<article class="w-full p-4 border border-neutral-300 rounded-md space-y-3 flex flex-col justify-between">
+    <div class="space-y-3">
+        <a href={href} class="hover:underline">
+            <h4 class="text-md font-semibold flex items-center gap-1">
+                <span>{title}</span>
+                {isWorking && (<span class="w-2 h-2 block rounded-full bg-green-500"></span>)}
+            </h4>
+        </a>
+        <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
+    </div>
+    {
+      skills && skills.length > 0 && (
+      <ul class="flex gap-1 flex-wrap">
+        {
+          skills.map((skill) => (
+            <li class="text-xs px-1 py-.5 bg-neutral-200 jetbrains-mono rounded-md">{skill}</li>
+          ))
+        }
+      </ul>
+      )
+    }
+</article>

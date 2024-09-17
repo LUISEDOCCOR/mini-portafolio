@@ -1,11 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
+import Section from '../components/Section.astro';
+import Education from '../components/Education.astro';
+import Badge from '../components/Badge.astro';
+import Card from '../components/Card.astro';
 //icons
 import Location from '../components/Icons/Location.astro';
 import Github from '../components/Icons/Github.astro';
 import Linkedin from '../components/Icons/Linkedin.astro';
 import Mail from '../components/Icons/Mail.astro';
+//data
+import { education, skills, certificates, proyects  } from "../data/data"
 ---
 
 <Layout title="Luis Eduardo Ocegueda Cortés">
@@ -34,11 +40,56 @@ import Mail from '../components/Icons/Mail.astro';
                 <img
                     class="w-32 h-32 object-cover object-center rounded-md"
                     src="/profile.jpeg"
-                    alt="profile image"
+                    alt="Profile image of Luis Eduardo Ocegueda Cortes"
                 >
             </section>
         </header>
-        <main>
+        <main class="mt-12 space-y-12">
+            <Section title='Sobre mí'>
+                <p class="jetbrains-mono text-sm text-md text-neutral-600 leading-snug">
+                    Programador autodidacta con más de 2 años de experiencia en el
+                    mundo del desarrollo web, me apasiona aprender cosas nuevas, algo que
+                    me caracteriza es la responsabilidad que tomo en todos los proyectos
+                    que realizo, no solo de escribir código, si no de también tener una visión
+                    crítica del producto, las funcionalidades y el negocio.
+                </p>
+            </Section>
+            <Section title='Educación'>
+                <div class="space-y-2">
+                    {
+                      education.map((props) => (
+                      <Education {...props}/>
+                      ))
+                    }
+                </div>
+            </Section>
+            <Section title='Skills'>
+               <div class="flex justify-start gap-2">
+                {
+                  skills.map((skill) => (
+                    <Badge label={skill}/>
+                  ))
+                 }
+               </div>
+            </Section>
+            <Section title='Certificaciones'>
+               <div class="grid grid-cols-3 gap-4">
+                {
+                  certificates.map((props) => (
+                    <Card {...props}/>
+                  ))
+                 }
+               </div>
+            </Section>
+            <Section title='Proyectos'>
+               <div class="grid grid-cols-3 gap-4">
+                {
+                  proyects.map((props) => (
+                    <Card {...props}/>
+                  ))
+                 }
+               </div>
+            </Section>
         </main>
     </div>
 </Layout>
