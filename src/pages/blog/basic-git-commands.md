@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: Comandos básicos de git 
 desc: Guía rápida de los comandos esenciales de Git para gestionar tus proyectos con control de versiones.
 date: 17/09/2024
-image_path: /og/git.png
+image_path: /og/git.webp
 ---
 
 Aprende los comandos básicos de Git que todo desarrollador debe conocer para gestionar el control de versiones de sus proyectos.
