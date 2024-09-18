@@ -18,7 +18,7 @@ const posts = await Astro.glob("../pages/blog/*.md");
 
 <Layout>
   <header class="flex">
-    <section class="w-2/3 space-y-2">
+    <section class="w-full space-y-2 xl:w-2/3">
       <h1 class="text-2xl font-bold">Luis Eduardo</h1>
       <p class="jetbrains-mono text-md text-neutral-600">
         +2 año de experiencia. Desarrollador Front-end y Back-End. Programador
@@ -48,7 +48,7 @@ const posts = await Astro.glob("../pages/blog/*.md");
         </Link>
       </article>
     </section>
-    <section class="flex w-1/3 justify-center">
+    <section class="hidden justify-center xl:flex xl:w-1/3">
       <img
         class="h-32 w-32 rounded-md object-cover object-center"
         src="/profile.jpeg"
@@ -72,22 +72,22 @@ const posts = await Astro.glob("../pages/blog/*.md");
       </div>
     </Section>
     <Section title="Skills">
-      <div class="flex justify-start gap-2">
+      <div class="flex flex-wrap justify-start gap-2">
         {skills.map((skill) => <Badge label={skill} />)}
       </div>
     </Section>
     <Section title="Certificaciones">
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
         {certificates.map((props) => <Card {...props} />)}
       </div>
     </Section>
     <Section title="Proyectos">
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
         {proyects.map((props) => <Card {...props} />)}
       </div>
     </Section>
     <Section title="Blog">
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
         {
           posts.map((post) => (
             <Card
