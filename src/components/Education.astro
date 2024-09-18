@@ -7,10 +7,10 @@ interface Props {
 const { title, date, content } = Astro.props;
 ---
 
-<article class="flex justify-between">
-  <div class="w-3/4 space-y-1">
+<article class="flex flex-col-reverse xl:flex-row xl:justify-between">
+  <div class="w-full space-y-1 xl:w-3/4">
     <h4 class="text-md font-semibold">{title}</h4>
     <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
   </div>
-  <span class="w-1/4 text-right text-neutral-600">{date}</span>
+  <span class="w-full text-right text-neutral-600 xl:w-1/4">{date}</span>
 </article>
