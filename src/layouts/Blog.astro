@@ -1,21 +1,21 @@
 ---
 import Layout from "./Layout.astro";
 import Prose from "./Prose.astro";
-const { frontmatter } = Astro.props
+const { frontmatter } = Astro.props;
 ---
 
 <Layout>
-    <header class="space-y-3">
-        <div class="flex justify-between">
-            <a href="/" class="jetbrains-mono text-sm underline">salir</a>
-            <span>{frontmatter.date}</span>
-        </div>
-        <h1 class="text-2xl font-bold">{frontmatter.title}</h1>
-        <p class="jetbrains-mono text-md text-neutral-600">{frontmatter.desc}</p>
-    </header>
-    <main class="pb-16">
-        <Prose frontmatter={frontmatter}>
-            <slot/>
-        </Prose>
-    </main>
+  <header class="space-y-3">
+    <div class="flex justify-between">
+      <a href="/" class="jetbrains-mono text-sm underline">salir</a>
+      <span>{frontmatter.date}</span>
+    </div>
+    <h1 class="text-2xl font-bold">{frontmatter.title}</h1>
+    <p class="jetbrains-mono text-md text-neutral-600">{frontmatter.desc}</p>
+  </header>
+  <main class="pb-16">
+    <Prose frontmatter={frontmatter}>
+      <slot />
+    </Prose>
+  </main>
 </Layout>

@@ -1,33 +1,35 @@
 ---
 interface Props {
-    title: string
-    href: string
-    content: string
-    isWorking?: boolean
-    skills?: string[]
+  title: string;
+  href: string;
+  content: string;
+  isWorking?: boolean;
+  skills?: string[];
 }
-const { title, href, content, isWorking, skills } = Astro.props
+const { title, href, content, isWorking, skills } = Astro.props;
 ---
 
-<article class="w-full p-4 border border-neutral-300 rounded-md space-y-3 flex flex-col justify-between">
-    <div class="space-y-3">
-        <a href={href} class="hover:underline">
-            <h4 class="text-md font-semibold flex items-center gap-1">
-                <span>{title}</span>
-                {isWorking && (<span class="w-2 h-2 block rounded-full bg-green-500"></span>)}
-            </h4>
-        </a>
-        <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
-    </div>
-    {
-      skills && skills.length > 0 && (
-      <ul class="flex gap-1 flex-wrap">
-        {
-          skills.map((skill) => (
-            <li class="text-xs px-1 py-.5 bg-neutral-200 jetbrains-mono rounded-md">{skill}</li>
-          ))
-        }
+<article
+  class="flex w-full flex-col justify-between space-y-3 rounded-md border border-neutral-300 p-4"
+>
+  <div class="space-y-3">
+    <a href={href} class="hover:underline">
+      <h4 class="text-md flex items-center gap-1 font-semibold">
+        <span>{title}</span>
+        {isWorking && <span class="block h-2 w-2 rounded-full bg-green-500" />}
+      </h4>
+    </a>
+    <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
+  </div>
+  {
+    skills && skills.length > 0 && (
+      <ul class="flex flex-wrap gap-1">
+        {skills.map((skill) => (
+          <li class="py-.5 jetbrains-mono rounded-md bg-neutral-200 px-1 text-xs">
+            {skill}
+          </li>
+        ))}
       </ul>
-      )
-    }
+    )
+  }
 </article>

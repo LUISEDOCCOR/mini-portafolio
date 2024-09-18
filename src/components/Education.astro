@@ -1,15 +1,16 @@
 ---
 interface Props {
-  title: string
-  date: string
-  content: string
+  title: string;
+  date: string;
+  content: string;
 }
-const { title, date, content } = Astro.props
+const { title, date, content } = Astro.props;
 ---
+
 <article class="flex justify-between">
-    <div class="space-y-1 w-3/4">
-        <h4 class="text-md font-semibold">{title}</h4>
-        <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
-    </div>
-    <span class="text-neutral-600 w-1/4 text-right">{date}</span>
+  <div class="w-3/4 space-y-1">
+    <h4 class="text-md font-semibold">{title}</h4>
+    <p class="jetbrains-mono text-sm text-neutral-600">{content}</p>
+  </div>
+  <span class="w-1/4 text-right text-neutral-600">{date}</span>
 </article>

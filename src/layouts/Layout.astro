@@ -1,29 +1,29 @@
 ---
-import '@fontsource-variable/jetbrains-mono';
-import '@fontsource-variable/dm-sans';
-import { ViewTransitions } from 'astro:transitions';
-import Og from '../components/Og.astro';
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/dm-sans";
+import { ViewTransitions } from "astro:transitions";
+import Og from "../components/Og.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<ViewTransitions/>
-		<Og/>
-	</head>
-	<body class="mx-auto max-w-3xl pb-6 pt-16 space-y-12">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <Og />
+  </head>
+  <body class="mx-auto max-w-3xl space-y-12 pb-6 pt-16">
+    <slot />
+  </body>
 </html>
 <style is:global>
-    body{
-        font-family: 'DM Sans Variable', sans-serif;
-    }
-    .jetbrains-mono{
-        font-family: 'JetBrains Mono Variable', monospace;
-    }
+  body {
+    font-family: "DM Sans Variable", sans-serif;
+  }
+  .jetbrains-mono {
+    font-family: "JetBrains Mono Variable", monospace;
+  }
 </style>
