@@ -16,7 +16,11 @@ import { education, skills, certificates, proyects } from "../data/data";
 const posts = await Astro.glob("../pages/blog/*.md");
 ---
 
-<Layout>
+<Layout
+  title="Luis Eduardo Ocegueda Cortes"
+  desc="+2 años de experiencia. Desarrollador Front-end y Back-End. Programador autodidacta."
+  image_path="/og.png"
+>
   <header class="flex">
     <section class="w-full space-y-2 xl:w-2/3">
       <h1 class="text-2xl font-bold">Luis Eduardo</h1>

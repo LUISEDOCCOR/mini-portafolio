@@ -3,6 +3,14 @@ import "@fontsource-variable/jetbrains-mono";
 import "@fontsource-variable/dm-sans";
 import { ViewTransitions } from "astro:transitions";
 import Og from "../components/Og.astro";
+//og
+interface Props {
+  title: string;
+  desc: string;
+  image_path: string;
+}
+
+const { title, desc, image_path } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +21,7 @@ import Og from "../components/Og.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
-    <Og />
+    <Og title={title} desc={desc} image_path={image_path} />
   </head>
   <body class="mx-auto max-w-3xl space-y-12 px-4 pb-6 pt-10 xl:px-0 xl:pt-16">
     <slot />
