@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: ¿Cómo configurar correctamente ESLint y prettier en un proyecto de next JS?
 desc: Configura ESLint y Prettier en Next.js para garantizar un código limpio y consistente, mejorando la calidad y mantenibilidad del proyecto.
 date: 22/09/2024
-image_path: /og/git.webp
+image_path: /og/eslint-prettier.webp
 ---
 En este artículo, aprenderás a configurar ESLint y Prettier en tu proyecto de Next.js. Estas herramientas son fundamentales para mantener un código limpio y coherente, facilitando la colaboración en equipo y mejorando la calidad del software. ESLint se encarga de analizar tu código y detectar errores o prácticas no recomendadas, mientras que Prettier se ocupa de formatear el código automáticamente según convenciones predefinidas. Juntos, ayudan a evitar problemas comunes y aseguran que tu código siga un estilo uniforme. A lo largo de esta guía, te mostraremos los pasos necesarios para integrar ambas herramientas en tu proyecto de Next.js, permitiéndote enfocarte en lo que realmente importa: desarrollar una aplicación web excepcional.
 
