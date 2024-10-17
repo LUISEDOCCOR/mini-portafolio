@@ -64,7 +64,7 @@ export const proyects = [
     title: "Edutask",
     content:
       "Gestiona tus tareas diarias de manera eficiente, establece recordatorios y realiza un seguimiento de tu progreso.",
-    href: "https://github.com/Edutask-LUISEDOCCOR/APP",
+    href: "https://edutask.online/",
     skills: ["tailwindcss", "python", "flask", "sqlite", "jinja"],
     isWorking: true
   },
