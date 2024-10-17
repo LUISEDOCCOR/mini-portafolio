@@ -62,16 +62,16 @@ export const proyects = [
     title: "Edutask",
     content:
       "Gestiona tus tareas diarias de manera eficiente, establece recordatorios y realiza un seguimiento de tu progreso.",
-    href: "https://www.edutask.online/",
-    skills: ["tailwindcss", "supabase", "astro"]
+    href: "https://github.com/Edutask-LUISEDOCCOR/APP",
+    skills: ["tailwindcss", "python", "flask", "sqlite", "jinja"],
+    isWorking: true
   },
   {
     title: "Recursos DEV",
     content:
       "Recursos para programadores, utiliza la IA para poder encontrar los que mejor se acomoden a tus necesidades.",
-    href: "https://recursos-dev-ai.vercel.app/",
-    skills: ["tailwindcss", "vite", "react", "express", "vercel-SDK", "prisma"],
-    isWorking: true
+    href: "https://dev.luiseduardocortes.xyz/",
+    skills: ["tailwindcss", "vite", "react", "express", "vercel-SDK", "prisma"]
   },
   {
     title: "ColorKit",
