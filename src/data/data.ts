@@ -21,7 +21,9 @@ export const skills = [
   "golang",
   "javascript/typescript",
   "astro",
-  "express-js"
+  "express-js",
+  "python",
+  "flask"
 ];
 
 export const certificates = [
