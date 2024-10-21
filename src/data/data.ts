@@ -64,7 +64,7 @@ export const proyects = [
     title: "Edutask",
     content:
       "Gestiona tus tareas diarias de manera eficiente, establece recordatorios y realiza un seguimiento de tu progreso.",
-    href: "https://edutask.online/",
+    href: "https://app-production-3784.up.railway.app/task/",
     skills: ["tailwindcss", "python", "flask", "sqlite", "jinja"],
     isWorking: true
   },
