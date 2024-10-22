@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: Utiliza esta API gratuita para crear tu app de tareas
 desc: Esta API permite la creación de una aplicación de gestión de tareas, donde los usuarios pueden registrarse, autenticarse y realizar operaciones CRUD sobre las tareas.
 date: 25/09/2024
-image_path: /og/og.webp
+image_path: /og.webp
 ---
 
 Esta API de gestión de tareas permite a los usuarios registrarse,

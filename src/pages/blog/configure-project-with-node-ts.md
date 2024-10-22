@@ -3,7 +3,7 @@ layout: ../../layouts/Blog.astro
 title: Guía Definitiva para Configurar un Proyecto Node.js con TypeScript
 desc: Configura un proyecto Node.js con TypeScript fácilmente, optimizando tu desarrollo con tipado fuerte y autocompletado mejorado.
 date: 22/10/24
-image_path: /og/og.webp
+image_path: /og/ts-node.webp
 ---
 
 Configurar un proyecto Node.js con TypeScript permite aprovechar el tipado estático
